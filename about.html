@@ -10,17 +10,103 @@
         background-color:rgb(255, 79, 187);
     }
     #hugeText {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20px;
-            color: rgb(255, 255, 255);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+    }
+
+    /* Style for popup */
+    .popup {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .popup-content {
+        position: relative;
+        margin: auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .popup-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+    }
+
+    button {
+			color: #ffffff;
+			background-color: #e255ac;
+			font-size: 19px;
+			border: 1px solid #e255ac;
+			border-radius: 45px;
+			padding: 15px 50px;
+			letter-spacing: 5px;
+			cursor: pointer
+		}
+		button:hover {
+			color: #e255ac;
+			background-color: #ffffff;
         }
 </style>
+
 <body>
     <div id="hugeText">Happy Aniversary 2.1 Years <br>
-        เรารักแฟนๆมากกกกที่สุดในโลกเยยย
+        ครบรอบอีกแยะ เรารักแฟนๆมากเลยนะถึงบางทีมันจะไม่น่าเชื่อ <br>
+        ถ้าเมื่อไหร่ที่แฟนทนเราไม่ไหวแล้ว แฟนก็พอเถอะนะถ้าอยู่ไปแล้วมันเจ็บ <br>
+        เราขอบคุณแฟนนะ ที่ยังอยากจะอยู่กับเราทั้งๆที่เราทำตัวไม่ดีอยู่ตลอด <br>
+        รักแฟนๆมากๆ 🤍🫶🏻 <br>
+        <button id="openPopupBtn">Click</button>
     </div>
+    
+    <footer>เราแค่อยากลองทำให้มันพิเศษฝ่าปกติ แต่ตอนนี้ก้ได้แค่นี้แหละนะ ;-;</footer>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" id="closePopup">&times;</span>
+          <img src="./Screenshot 2024-09-28 220918.png" alt="Popup Image">
+        </div>
+      </div>
+<script>
+
+var popup = document.getElementById("popup");
+var openPopupBtn = document.getElementById("openPopupBtn");
+var closePopup = document.getElementById("closePopup");
+
+openPopupBtn.onclick = function() {
+  popup.style.display = "block";
+}
+
+closePopup.onclick = function() {
+  popup.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == popup) {
+    popup.style.display = "none";
+  }
+}
+</script>
 </body>
 </html>
